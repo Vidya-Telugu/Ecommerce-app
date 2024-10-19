@@ -1,14 +1,17 @@
-import Nav from "./Components/Nav"
+import Navigation from "./Components/Navigation"
 import Header from "./Components/Header"
 import Products from "./Components/Products"
-import Footer from "./Components/Footer"
+import FooterFile from "./Components/FooterFile"
+import { Container } from "react-bootstrap"
 function App() {
   return (
-    <div>
-      <Nav></Nav>
+    <div className="d-flex flex-column min-vh-100">
+      <Navigation></Navigation>
       <Header></Header>
-      <Products></Products>
-      <Footer></Footer>
+      <Container className="flex-grow-1 my-5">
+        <Products />
+      </Container>
+      <FooterFile></FooterFile>
     </div>
   )
 }
