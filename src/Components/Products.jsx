@@ -1,11 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { Button, Card,Container,Row,Col} from 'react-bootstrap';
 import Album1 from "../assets/Album 1.png";
 import Album2 from "../assets/Album 2.png";
 import Album3 from "../assets/Album 3.png";
 import Album4 from "../assets/Album 4.png";
+import { CartContext } from './Context/CartContext';
 
 function Products() {
+    const {addToCart}=useContext(CartContext);
     const productsArr = [
         {
             title: 'Colors',
@@ -28,6 +30,9 @@ function Products() {
             imageUrl:Album4,
         }
     ]
+    function handleAddToCart(element){
+          addToCart(element);
+    }
 
 
     return (
@@ -42,7 +47,7 @@ function Products() {
                     <Card className='shadow border solid' style={{width:200,height:200,margin:50}}>
                     <Card.Img  variant="top" style={{objectFit:"cover"}} src={product.imageUrl}></Card.Img>
                       <p>{product.price}</p>
-                      <Button style={{width:130}} className='ml-5'>ADD TO CART</Button>
+                      <Button style={{width:130}} className='ml-5' onClick={()=>handleAddToCart(product)}>ADD TO CART</Button>
                     </Card>
                     </Col>
                     </Fragment>

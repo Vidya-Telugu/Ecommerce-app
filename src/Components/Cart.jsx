@@ -1,29 +1,31 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { Button, Container,Col,Row} from 'react-bootstrap'
-import Album1 from "../assets/Album 1.png";
-import Album2 from "../assets/Album 2.png";
-import Album3 from "../assets/Album 3.png";
+// import Album1 from "../assets/Album 1.png";
+// import Album2 from "../assets/Album 2.png";
+// import Album3 from "../assets/Album 3.png";
+import { CartContext } from './Context/CartContext';
 function Cart({onClose}) {
-    const cartElements = [
-        {        
-        title: 'Colors',        
-        price: 100,       
-        imageUrl:Album1,       
-        quantity: 2,     
-        },        
-        {        
-        title: 'Black and white Colors',       
-        price: 50,        
-        imageUrl:Album2,        
-        quantity: 3,      
-        },       
-        {        
-        title: 'Yellow and Black Colors',       
-        price: 70,        
-        imageUrl:Album3,       
-        quantity: 1,      
-        }       
-        ]
+  const {cartItems}=useContext(CartContext)
+    // const cartElements = [
+    //     {        
+    //     title: 'Colors',        
+    //     price: 100,       
+    //     imageUrl:Album1,       
+    //     quantity: 2,     
+    //     },        
+    //     {        
+    //     title: 'Black and white Colors',       
+    //     price: 50,        
+    //     imageUrl:Album2,        
+    //     quantity: 3,      
+    //     },       
+    //     {        
+    //     title: 'Yellow and Black Colors',       
+    //     price: 70,        
+    //     imageUrl:Album3,       
+    //     quantity: 1,      
+    //     }       
+    //     ]
   return (
    
     <Container style={{maxWidth:350,zIndex:1000}}className="position-absolute top-0 end-0 p-3 bg-light border shadow-sm">
@@ -34,7 +36,7 @@ function Cart({onClose}) {
             <Col className='ml-3'>QUANTITY</Col>
         </Row>
         {
-            cartElements.map((element,index)=>
+            cartItems.map((element,index)=>
             <Fragment>
                 <Row className="pb-2"key={index}>
                 <Col className='d-flex align-items-center'>
