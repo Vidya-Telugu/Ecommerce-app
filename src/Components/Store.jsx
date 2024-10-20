@@ -1,10 +1,16 @@
 import React from 'react'
-
+import Navigation from './Navigation'
+import Products from './Products'
+import FooterFile from './FooterFile'
+import Header from "./Header"
 function Store() {
   return (
-    <div>
-      <h1>Store</h1>
-    </div>
+    <>
+      <Navigation></Navigation>
+      <Header></Header>
+      <Products></Products>
+      <FooterFile></FooterFile>
+    </>
   )
 }
 

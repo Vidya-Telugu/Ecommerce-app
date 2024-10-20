@@ -17,10 +17,10 @@ function Navigation() {
     <Navbar className='bg-black mb-3'>
     <Nav variant="pills" className={'mx-auto justify-content-end p-0 fw-bold'}>
       <Nav.Item >
-        <Link className='text-white m-3' to="/">HOME</Link>
+        <Link className='text-white m-3' to="/home">HOME</Link>
       </Nav.Item >
       <Nav.Item >
-        <Link className='text-white m-3' to="/store">STORE</Link>
+        <Link className='text-white m-3' to="/">STORE</Link>
       </Nav.Item>
       <Nav.Item >
         <Link className='text-white m-3' to="/about">ABOUT</Link>
