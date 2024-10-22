@@ -25,6 +25,9 @@ function Navigation() {
       <Nav.Item >
         <Link className='text-white m-3' to="/about">ABOUT</Link>
       </Nav.Item>
+      <Nav.Item>
+        <Link className='text-white m-3' to="/contact">CONTACT</Link>
+      </Nav.Item>
     </Nav>
     <div style={{width:30,height:35,backgroundColor:"yellow"}}>{TotalQuantity}</div>
     <Button className='bg-success  ms-auto' onClick={handleOpen}>Cart</Button>
